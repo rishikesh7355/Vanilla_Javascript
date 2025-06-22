@@ -1,0 +1,56 @@
+body {
+    margin:0;
+    padding:0;
+}
+
+.container{
+    height:90vh;
+    background-color: black;
+    margin:0.5rem 0.5rem;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden
+}
+.container:first-child {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+.container:last-child {
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.accordion:first-child {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+.accordion:last-child {
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.accordion{
+    background-color:blue;
+    margin: 0rem 1rem 0rem 1rem; 
+    padding: 0.1rem;
+}
+.accordion:not(:last-child){
+    border-bottom:  1px solid white;
+};
+
+.accordion-header {
+   color:white;
+}
+.accordion-header:hover, :active {
+   color:darkgoldenrod;
+   cursor: pointer;
+   transition: 0.2s ease-out;
+}
+
+.accordion-body {
+    display: none;
+}
+.accordion-body.active {
+    display: block;
+    padding:1rem;
+    background-color:aquamarine;
+    transition: 0.2s ease-out;
+}
