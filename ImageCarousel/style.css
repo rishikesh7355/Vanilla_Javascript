@@ -1,0 +1,26 @@
+* {
+    margin:0
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    overflow: hidden;
+    width:50vw;
+    height: 50vh;
+}
+
+.btn-left, .btn-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
