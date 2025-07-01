@@ -1,6 +1,14 @@
 body {
     margin:0;
 }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: yellowgreen;
+}
 
 .btn {
     padding:10px;
@@ -10,5 +18,16 @@ body {
     border-radius: 5px;
     font-weight: bolder;
     box-shadow: 0 0 5px #000;
+    cursor: pointer;
+}
+.delBtn {
+    padding:10px;
+    border-radius: 10px;
+    background-color: red;
+    color: black;
+    font-weight: bolder;
+    cursor: pointer;
+    box-shadow: 0 0 5px #000;
+    border: none;
 }
 
