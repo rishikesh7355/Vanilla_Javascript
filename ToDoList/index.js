@@ -11,8 +11,11 @@ addBtn.addEventListener("click", function () {
 function addNewTask(task) {
     const containerTwo = document.getElementById("newTaskContainer");
     const newDiv = document.createElement("div");
-    newDiv.textContent= task;
-    containerTwo.appendChild(newDiv);
+    newDiv.classList.add("newTaskStyle");
+
+    const taskSpan = document.createElement("span");
+    taskSpan.textContent = task;
+    newDiv.appendChild(taskSpan);
 
     if(newDiv.textContent !== "" && newDiv.textContent === newDiv.textContent.trim()) {
         const delBtn = document.createElement("button");
@@ -21,15 +24,28 @@ function addNewTask(task) {
         delBtn.classList.add("delBtn");
         editBtn.textContent = "Edit";
         editBtn.classList.add("editBtn");
-        // editBtn.addEventListener("click", () => {
-        //     if(newTask !== null && newTask!== newTask.trim()){
-        //         newDiv.textContent = newTask;
-        //     }
-        // });
+
+        // edit logic
+        editBtn.addEventListener("click", () => {
+            if(editBtn.textContent === "Edit") {
+               const input  = document.createElement("input");
+               input.type = "text";
+               input.value = taskSpan.textContent;
+               newDiv.replaceChild(input, taskSpan)
+               editBtn.textContent = "Save";
+            }else {
+                const input = newDiv.querySelector("input");
+                const editedValue = input.value.trim();
+                if(!editedValue) return;
+                taskSpan.textContent = editedValue;
+                newDiv.replaceChild(taskSpan, input);
+                editBtn.textContent = "Edit";
+            }
+        });
+
+        // delete logic 
         delBtn.addEventListener("click", function() {
             containerTwo.removeChild(newDiv);
-            containerTwo.removeChild(delBtn);
-            containerTwo.removeChild(editBtn);
         })
         newDiv.appendChild(delBtn);
         newDiv.appendChild(editBtn);
