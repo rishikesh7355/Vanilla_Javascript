@@ -6,21 +6,20 @@ function updateTime() {
     let m=now.getMinutes();
     let s =now.getSeconds();
     let year = now.getFullYear();
-    let day = weekday[now.getDate()+1];
-    let month = months[now.getMonth()]; // Months are zero-based in JavaScript
+    let dayName = weekday[(now.getDate()+1)%7];
+    let day = (now.getDate());
 
-    console.log(year);
-    console.log(day);
-    console.log(month);
+    let month = months[(now.getMonth())%12]; // Months are zero-based in JavaScript
 
     //add a leading 0 to single digit numbers
     h= h<10 ? "0"+ h : h;
     m= m<10 ? "0"+ m: m;
     s= s<10 ? "0"+ s: s;
 
-    const time = `${month},${year},${day} ${h}:${m}:${s}`;
+    const time = `${h}:${m}:${s}`;
 
-    document.getElementById("DigitalClock").textContent = time;
+    document.getElementById("timing").textContent = time;
+    document.getElementById("YMD").textContent = `${day} ${month}, ${year} ${dayName}`;
 }
 
 updateTime();
