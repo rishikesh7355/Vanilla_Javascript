@@ -1,17 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* to center big circle */
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .clockContainer {
+    border-radius: 50%;
     height:300px;
     width:300px;
     border:10px solid rgba(0, 0, 0, 0.879);
-    border-radius: 50%;
-    margin: 100px auto;
-    position: relative;
+    /*to center small circle*/
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+.clockContainer h4 {
+    position: absolute;
+    top: 40%;;
 }
 
 .clock {
-    height: 20px;
-    width: 20px;
-    color: royalblue;
+    height: 10px;
+    width: 10px;
     position: absolute;
+    background-color: rgba(0, 0,0,1);
+    border-radius: 50%;
+    /* to center the clock hands */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.handH {
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background-color: rgba(0, 0,0,1);
+    border-radius: 8px;
+}
+.handM {
+    position: absolute;
+    width: 6px;
+    height: 90px;
+    background-color: blue;
+    border-radius: 8px;
+}
+.handS {
+     position: absolute;
+    width: 3px;
+    height: 100px;
+    background-color: red;
+    border-radius: 8px;
 }
