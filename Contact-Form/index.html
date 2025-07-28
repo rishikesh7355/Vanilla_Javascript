@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="contactForm">
+            <h2> Sign up </h2>
+            <div class="fName" id="fName">
+                <label for="first Name">First Name</label>
+                <input type="text" id="firstName" placeholder="Enter your first name" required>
+                <span class="err" id="fNameErr"></span>
+            </div>
+            <div class="lName" id="lName">
+                <label for="last Name">Last Name</label>
+                <input type="text" id="lastName" placeholder="Enter your last name" required>
+                <span class="err" id="lNameErr"></span>
+            </div>
+            <div class="mail" id="email">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <span class="err" id="emailErr"></span>
+            </div>
+            <div class="mob" id="mobNumber">
+                <label for="mobile numner">Number</label>
+                <input type="number" id="mobile"  placeholder="Enter your contact details" required>
+                <span class="err" id="mobNumberErr"></span>
+            </div>
+            <div class="feedback" id="feedback">
+                <label for="feedback">Suggestions or Feedback</label>
+                <textarea type="text" id="feedback" placeholder="Enter feedback" required></textarea>
+                <span class="err" id="feedErr"></span>
+            </div>
+            <button class="submitBtn">Submit</button>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
