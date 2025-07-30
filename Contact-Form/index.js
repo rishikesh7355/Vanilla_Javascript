@@ -31,48 +31,56 @@ email.addEventListener('change', (e)=>{
 
 number.addEventListener('change', (e)=> {
     num = e.target.value;
+    if(num.length >10) {
+        num=num.slice(0, 10);
+    }
 })
 const showError = (element, errTag, message) => {
     errTag.textContent = message;
     element.style.border = "1px solid red";
 }
 
+const removeError = (element, errTag ) => {
+    errTag.textContent = "";
+    element.style.border = "1px solid black";
+}
+
 const validateForm = () => {
-    let err = false;
+    let err=[];
     if(fName.length ===0){
-        showError(firstName, fNameErr, "First Name cannot be empty");
-        err = true;
-    }else{
-        err = false;
+        showError(firstName, fNameErr, "First Name cannot be empty!");
+        err.push("Error in First Name");
+    } else {
+       removeError(firstName, fNameErr);
     }
     if(lName.length ===0){
-        showError(lastName, lNameErr, "Last Name cannot be empty");
-        err= true;
+        showError(lastName, lNameErr, "Last Name cannot be empty!");
+        err.push("Error in Last Name");
     }else{
-        err = false;
+       removeError(lastName, lNameErr);
+
     }
     if(email.length ===0){
-        showError(mail, email, "Email cannot be empty");
-        err = true;
+        showError(mail, email, "Email cannot be empty!");
+        err.push("Error in Email");
     }else{
-        er = false;
+        removeError(email, emailErr);
     }
     if(num.length ===0){
-        showError(number, mobNumberErr, "mobile number cannot be empty");
-        err= true;
+        showError(number, mobNumberErr, "mobile number cannot be empty!");
+       err.push("Mobile number cannot be empty");
     } else if(num.length <10 || num.length >10) {
         showError(number, mobNumberErr, "Mobile number must be of 10 digits");
-        err = true;
+        err.push("Mobile number must be of 10 digits");
     }else{
-        err = false;
+        removeError(number, mobNumberErr);
     }
-    
+    return err;
 }
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    validateForm();
-    console.log('err', err);
-    if(err === false){
+    let isErr = validateForm();
+    if(isErr.length ===0){
         alert("Form submitted successfully");
     }
 })
