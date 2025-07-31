@@ -60,14 +60,14 @@ const validateForm = () => {
        removeError(lastName, lNameErr);
 
     }
-    if(email.length ===0){
-        showError(mail, email, "Email cannot be empty!");
+    if(mail.length ===0){
+        showError(email, emailErr, "Email cannot be empty!");
         err.push("Error in Email");
     }else{
         removeError(email, emailErr);
     }
     if(num.length ===0){
-        showError(number, mobNumberErr, "mobile number cannot be empty!");
+        showError(number, mobNumberErr, "Mobile number cannot be empty!");
        err.push("Mobile number cannot be empty");
     } else if(num.length <10 || num.length >10) {
         showError(number, mobNumberErr, "Mobile number must be of 10 digits");
