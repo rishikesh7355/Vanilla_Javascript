@@ -3,18 +3,17 @@ const watcher = document.getElementById('watchEndOfDocument');
 const max=10;
 let index=0;
 const generateMoreCards = () => {
-    for(let i=index;i<max;i++) {
+    for(let i=index;i<index + max;i++) {
         const card = document.createElement('div');
         card.className = 'card';
-        card.innerHTML = `Card ${index+1}`;
+        card.innerHTML = `Card ${i}`;
         container.appendChild(card);
-        index++;
     }
+    index += max;
 }
-generateMoreCards();
 
 const observer = new IntersectionObserver((entries) => {
-    console.log(observer);
+    // console.log(observer);
     entries.forEach((entry) => {
         if(!entry.isIntersecting)  {
             return;
@@ -24,3 +23,4 @@ const observer = new IntersectionObserver((entries) => {
 })
 
 observer.observe(watcher);
+generateMoreCards();

@@ -21,5 +21,6 @@
 }
 
 #watchEndOfDocument {
-    margin: 10px;
+    margin: 0px;
+    height: 10px;
 }
