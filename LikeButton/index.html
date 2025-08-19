@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Like Button</title>
-    <link res="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <script src="script.js"></script>
     <div class="container">
-        <div id="likeButton">👍</div>
-        <span id="likeCount">0</span>
+        <div id="post" class="post">
+            <footer class="footer">
+                <span id="likeButton">👍Likes</span>
+                <span id="likeCount">0</span>
+                <span id="dislikeButton">👎 Dislikes</span  >        
+                <span id="dislikeCount">0</span>
+            </footer>
+        </div>
     </div>
 </body>
 </html>
