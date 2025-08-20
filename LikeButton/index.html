@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="script.js"></script>
+    <!-- defer used to load the script in backgorund and runs it after
+      the DOM is fully parsed-->
+    <script src="script.js" defer></script>
     <div class="container">
         <div id="post" class="post">
             <footer class="footer">
-                <span id="likeButton">👍Likes</span>
+                <span id="likeButton">👍Like</span>
                 <span id="likeCount">0</span>
-                <span id="dislikeButton">👎 Dislikes</span  >        
+                <span id="dislikeButton">👎 Dislike</span  >        
                 <span id="dislikeCount">0</span>
             </footer>
         </div>

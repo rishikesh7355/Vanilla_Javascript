@@ -25,3 +25,12 @@
     background-color: grey;
 
 }
+
+#likeButton, #dislikeButton {
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 10px;
+}
+.liked {
+    color: skyblue
+}

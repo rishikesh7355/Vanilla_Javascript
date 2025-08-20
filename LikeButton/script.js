@@ -4,7 +4,7 @@ async function handleClick(){
     likeBtn.disabled = true;
     try {
         // simulate api call to record the like
-        const response = await fetch('/api/like', {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -14,8 +14,10 @@ async function handleClick(){
         if(!response.ok){
             throw new Error('Http error! status:'+ response.status);
         }
-        const dataa = await response.json();
-        likeCount.textContent = dataa.newLikeCount;
+        const data = await response.json();
+        console.log('Like recorded:', data);
+        likeBtn.textContent = '👍 Liked';
+        likeCount.textContent = '1';
         likeBtn.classList.add('liked');
     } catch (error) {
         console.error('Error liking the post:', error);
