@@ -7,30 +7,38 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
-    width: 200px;
-    background-color: #f0f0f0
+    height: 100vh;
+    width: 100vw;
+    background-color: #000
 }
 
 .post{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 300px;
+    width: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
 }
 
 .footer {
     display: flex;
     margin-top: 100%;
-    padding: 10px;
+    padding: 5px;
     background-color: grey;
+    border-radius: 15px;
 
 }
 
 #likeButton, #dislikeButton {
     cursor: pointer;
-    font-size: 24px;
+    font-size: 14px;
     margin-right: 10px;
 }
 .liked {
     color: skyblue
+}
+
+.disliked {
+    color: red
 }
